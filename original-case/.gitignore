@@ -1,0 +1,38 @@
+# Gradle
+.gradle
+build
+bin
+
+# Maven
+target
+
+# NPM
+node
+node_modules
+
+# Generated files
+src/main/resources
+
+# Log files
+*.log
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# Java annotation processor (APT)
+.factorypath
+
+# VS code
+.project
+.vscode
+
+# INTELLIJ
+.idea
+*.iml
+out
+
+# Eclipse
+.settings
+
+# Mac
+.DS_Store

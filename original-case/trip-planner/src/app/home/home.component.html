@@ -1,0 +1,14 @@
+
+<div style="padding: 13px;" class="form-group">
+  <mat-spinner *ngIf="airports.length === 0"></mat-spinner>
+
+    <label for="name" >Origin: </label>
+    <input id="origin" type="text" [formControl]="originFormControl"> <br/><br/>
+
+    <label for="name">Destination: </label>
+    <input id="destination" type="text" [formControl]="desginationFormControl"> <br/><br/>
+
+    <p>Trip Fare: <b>{{ fareFormControl.value }}</b></p> 
+    <button (click)="callFaresAPI()">Show Fare</button>
+
+</div>

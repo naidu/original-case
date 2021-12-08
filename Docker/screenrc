@@ -1,0 +1,32 @@
+# Enable 256 color term
+term xterm-256color
+
+#add much much more scrollback
+defscrollback 50000
+
+# Don't display the copyright page
+startup_message off           # default: on
+
+# Display the status line at the bottom
+hardstatus on
+hardstatus alwayslastline
+# Very nice tabbed colored hardstatus line
+hardstatus string "%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}"
+
+# Hide hardstatus: ctrl-a f
+bind f eval "hardstatus ignore"
+# Show hardstatus: ctrl-a F
+bind F eval "hardstatus alwayslastline"
+
+shell "/bin/bash"
+
+screen -t server       0 
+stuff "cd ${HOME}simple-travel-api-mock && ./gradlew bootRun^M"
+
+screen -t web          1 
+stuff "cd ${HOME}original-case && ./gradlew bootRun^M"
+
+screen -t bash         2 ${HOME}/Docker/print_banner.sh
+
+# Switch to the shell screen
+select 2

@@ -1,0 +1,2 @@
+include 'trip-planner'
+rootProject.name = 'trip-planner'
