@@ -1,1 +1,28 @@
-<p>dashboard works!</p>
+<div style="padding: 13px;" class="form-group">
+  <h2>API Performance Dashboard</h2>
+  <br/>
+  <table>
+    <thead>
+        <tr>
+            <th>Requests Processed</th>
+            <th># OK Responses</th>
+            <th># 4xx Responses</th>
+            <th># 5xx Responses</th>
+            <th>Avg Response Time</th>
+            <th>Min Response Time</th>
+            <th>Max Response Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ totalReqProcessed }}</td>
+            <td>{{ OkResponses }}</td>
+            <td>{{ FourXXResponses }}</td>
+            <td>{{ FiveXXResponses }}</td>
+            <td>{{ averageResponseTimeForAllRequests }}</td>
+            <td>{{ minResponseTime }}</td>
+            <td>{{ maxResponseTime }}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

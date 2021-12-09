@@ -14,7 +14,8 @@ export class DataService {
 
   private REST_API_SERVER = "http://172.242.224.3:8080"
   private AIRPORTS = "/airports";
-  private FARES = "/fares";
+  private FARES    = "/fares";
+  private STATS    = "/statistics";
   
   private httpOptions = {
     headers: new HttpHeaders({
@@ -54,4 +55,13 @@ export class DataService {
                .get(apiURL, this.httpOptions)
                .pipe(catchError(this.handleError));
   }
+
+  public getApiStats() {
+    const apiURL = this.REST_API_SERVER + this.STATS;
+    console.log("API URL: " + apiURL);
+    return this.httpClient
+               .get(apiURL, this.httpOptions)
+               .pipe(catchError(this.handleError));
+  }
+
 }

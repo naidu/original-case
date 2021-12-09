@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class StatisticsService {
 	private ConcurrentMap<Object, Long> statisticsMap;
+	private static final String OK_RESPONSES = "OkResponses";
 	private static final String TOTAL_REQUEST_PROCESSED = "totalReqProcessed";
 	private static final String AVERATE_RESPONSE_TIME_FOR_ALL_REQUESTS = "averageResponseTimeForAllRequests";
 	private static final String MIN_RESPONSE_TIME = "minResponseTime";
@@ -23,7 +24,7 @@ public class StatisticsService {
 
 		Long statusCount = Optional.ofNullable(statisticsMap.get(status)).orElse(0l)+1;
 
-		statisticsMap.put(status, statusCount);
+		statisticsMap.put(OK_RESPONSES, statusCount);
 
 		statisticsMap.put(TOTAL_REQUEST_PROCESSED, statusCount);
 		statisticsMap.put(AVERATE_RESPONSE_TIME_FOR_ALL_REQUESTS, totalTimeForAllResponse / totalApiRequests);

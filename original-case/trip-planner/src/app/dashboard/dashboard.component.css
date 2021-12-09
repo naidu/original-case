@@ -1,0 +1,12 @@
+td {
+  text-align: center;
+}
+th, td {
+  padding: 15px;
+}
+
+tr:hover {background-color: yellow;}
+th {
+  background-color: #04AA6D;
+  color: white;
+}
