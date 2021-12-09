@@ -28,26 +28,17 @@ public class StatisticsFilter implements Filter {
          .getBean("statisticsService");
     }
 
-    
-	/*
-	 * public void doApiFilter(HttpServletRequest request, HttpServletResponse
-	 * response, FilterChain chain) throws java.io.IOException, ServletException {
-	 * if(request.getRequestURI().contains("statistics")) { return; }
-	 * 
-	 * doFilter(request, response, chain); }
-	 */
-
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) 
       throws java.io.IOException, ServletException {
     	HttpServletRequest httpRequest = (HttpServletRequest) request;
       System.out.println(httpRequest.getRequestURI());
 
-      if(httpRequest.getRequestURI().contains("statistics"))
-    	{
-    		chain.doFilter(request, response);
-    		return;
-    	}
+      // if(httpRequest.getRequestURI().contains("statistics"))
+    	// {
+    	// 	chain.doFilter(request, response);
+    	// 	return;
+    	// }
  
     	totalApiRequests = Optional.ofNullable(totalApiRequests).orElse(1l);
     	System.out.println("totalApiRequests = " + totalApiRequests);

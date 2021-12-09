@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
       console.log(data);
 
       this.totalReqProcessed = data.totalReqProcessed;
-      this.OkResponses = data.OkResponses;
+      this.OkResponses = data.okResponses;
       if( data.fourXXResponses != null ) {
         this.FourXXResponses = data.fourXXResponses;
       }
