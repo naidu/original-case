@@ -28,4 +28,11 @@ Starting with cloning the repo.  From repo directory issue below commands -
 
 At this point, the building of custom docker image will begin.  Post which, installation of dependent packages and building of angular app.  Once these steps are successful, the dokcer container is launched, three screen sessions are launched and you are put in 3rd screen by default.  Here you will see a wait bar and after some seconds, the IP and port number of the services are displayed.  
 
-Now go to the IP:port number of the web app and try the things out.  
+## Accessing the web portal
+
+The IP and port number of the web portal and backend are printed in terminal 3 (default) of the screen session.  
+
+## Stopping the docker container
+
+By now it must be clear that there are three screen sessions are running inside the docker container.  To stop the docker container, terminate all the three screen sessions by pressing Ctrl+c. When all the screen sessions are killed, the docker container will also be stopped / killed.  
+
